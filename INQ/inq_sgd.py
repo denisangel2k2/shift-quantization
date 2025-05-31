@@ -61,7 +61,7 @@ class INQSGD(Optimizer):
             momentum = group['momentum']
             dampening = group['dampening']
             nesterov = group['nesterov']
-            Ts = group['Ts'] # Get the quantization mask for this group
+            Ts = group['Ts'] # quantization mask
 
             for idx, p in enumerate(group['params']):
                 if p.grad is None or Ts[idx] is None: # Skip if no grad or not a trainable weight
